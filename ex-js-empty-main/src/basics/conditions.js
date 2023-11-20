@@ -13,7 +13,15 @@
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
-  //
+    if (isNaN(n)){
+        throw new Error("tal")
+    }
+    if (n > 2) {
+        return true;
+    } else {
+        return false;
+    }
+    //
 }
 
 /**
@@ -22,5 +30,17 @@ export function isBiggerThan2(n) {
  * @return {boolean} true if m is a multiple of n
  */
 export function isMult(n, m) {
-  //
+
+    const multiple = n % m
+
+    if (isNaN(multiple)){
+        throw new Error("nan")
+    }
+    if (multiple === 0) {
+        return true
+
+    }   else {
+        return false
+    }
+    //
 }
