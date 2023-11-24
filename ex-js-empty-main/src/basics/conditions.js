@@ -14,7 +14,7 @@
  */
 export function isBiggerThan2(n) {
     if (isNaN(n)){
-        throw new Error("tal")
+        throw new Error("t")
     }
     if (n > 2) {
         return true;

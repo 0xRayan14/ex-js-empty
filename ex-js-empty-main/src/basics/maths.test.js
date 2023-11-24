@@ -70,7 +70,7 @@ describe("Compute rounded averages :", () => {
     expect(roundedAverage([2, 3, 5, 4, 5])).toBe(3.8)
   })
 
-  test("Average with floats", () => {
+  test("Average with floats", ()  => {
     expect(roundedAverage([3.2, 4, 5.5])).toBe(4.2)
     expect(roundedAverage([2.3, 4.3, 6])).toBe(4.2)
     expect(roundedAverage([3.5, 4.4, 5.5, 3])).toBe(4.1)
