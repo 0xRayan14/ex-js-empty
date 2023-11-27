@@ -10,7 +10,7 @@
  * The values of the properties should be "Toto", "Tutu"
  */
 export function crateUserObject() {
-  //
+  return {first_name: "Toto", last_name: "Tutu"}
 }
 
 /**
@@ -19,9 +19,8 @@ export function crateUserObject() {
  * @return string a concatenation of the first and last name, separated with a space
  */
 export function accessPropertiesInObjects(object) {
-  //
+    return object.first_name.concat(" ", object.last_name)
 }
-
 /**
  *
  * @param {Object} object
@@ -30,7 +29,10 @@ export function accessPropertiesInObjects(object) {
  * and all original object values mapped to lower case
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
-  //
+    return {
+        keys: Object.keys(object).map(key => key.toUpperCase()),
+        values: Object.values(object).map(value => value.toLowerCase())
+    }
 }
 
 /**
@@ -39,23 +41,30 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
-  //
+    users.sort((a, b) => a.age - b.age);
+    const youngUser = users[0];
+    const oldUser = users[users.length - 1];
+    return {
+        younger: youngUser.name,
+        older: oldUser.name,
+    };
 }
 
 /**
- * In javascript, objects can be represented as string, this is JSON
+ * In JavaScript, objects can be represented as strings using JSON.
  * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
- * @param {string} string
- * @return {Object} An object retried by parsing the string
+ * @param {string} string - The string representing a JSON object.
+ * @return {Object} An object retrieved by parsing the input string.
  */
 export function parseJavaScriptObjectNotation(string) {
-  //
+    return JSON.parse(string);
 }
+
 
 /**
  * @param {Object} object
  * @return {string} An string representing the given object
  */
 export function stringifyJavaScriptObjectNotation(object) {
-  //
+    return JSON.stringify(object)
 }
