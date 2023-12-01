@@ -4,11 +4,9 @@
  * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
  */
 
-/**
- * You need to change the color of the html element with the id "change-my-color"
- */
 export function getElementFromDomAndChangeColorToRed() {
-  //
+    const element = document.getElementById("change-my-color");
+    element.style.color = "red"
 }
 
 /**
@@ -16,7 +14,8 @@ export function getElementFromDomAndChangeColorToRed() {
  * The first paragraph must contain "Bonjour", the second "Toto"
  */
 export function addElementsInDOM() {
-  //
+    const paragraphe1 = document.getElementById("add-your-elements-in-this-element")
+    paragraphe1.innerHTML = 'Salut je mappelle aaa et aussi Bonjour <br/>' + "Jai mon petit frèree qui sappelle Toto"
 }
 
 /**
@@ -26,5 +25,20 @@ export function addElementsInDOM() {
  * @param {array<{name: string, color: string}>} listElements
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
-  //
+    const liste = document.getElementById("add-list-here");
+
+    if (liste) {
+        const ulElement = document.createElement("ul");
+
+        listElements.forEach((element) => {
+            const liElement = document.createElement("li");
+            liElement.innerText = element.name;
+            liElement.style.backgroundColor = element.color;
+            ulElement.appendChild(liElement);
+        });
+        liste.appendChild(ulElement);
+
+    } else {
+        console.error("Container element not found with the specified id");
+    }
 }
